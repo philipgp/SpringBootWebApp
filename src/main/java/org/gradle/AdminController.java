@@ -9,21 +9,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class AdminController {
 	
 
 	@RequestMapping(value = "/getAllDeptType", method = RequestMethod.GET)
+	@ResponseBody
 	public String getAllDeptType(HttpServletResponse response){
-		try {
+		/*try {
 			response.getWriter().println("ok");
 			response.setStatus(200);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-	return "";	
+		}*/
+	return "hello";	
 	}
 }
