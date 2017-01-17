@@ -1,22 +1,21 @@
 package org.gradle;
 
-import java.io.IOException;
-
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@EnableAutoConfiguration
 public class AdminController {
 	
 
-	@RequestMapping(value = "/getAllDeptType", method = RequestMethod.GET)
-	@ResponseBody
+	@RequestMapping("/")
+    @ResponseBody
 	public String getAllDeptType(HttpServletResponse response){
 		/*try {
 			response.getWriter().println("ok");
@@ -25,6 +24,10 @@ public class AdminController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
-	return "hello";	
+	return "hello2"; 	
 	}
+	
+	public static void main(String[] args) throws Exception {
+		SpringApplication.run(AdminController.class, args);
+    }
 }
